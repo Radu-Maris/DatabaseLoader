@@ -1,0 +1,15 @@
+services:
+  db:
+    build: .
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysql
+      POSTGRES_DB: postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./data:/home
+    ports:
+      - 5433:5432
+
+volumes:
+  pgdata:
